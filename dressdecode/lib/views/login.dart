@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'homepage.dart';
+import 'register.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -54,8 +56,9 @@ class _LoginState extends State<Login> {
   Widget _icon() {
     return Container(
       decoration: BoxDecoration(
-          border: Border.all(color: Colors.white, width: 2),
-          shape: BoxShape.circle),
+        border: Border.all(color: Colors.white, width: 2),
+        shape: BoxShape.circle,
+      ),
       child: const Icon(Icons.person, color: Colors.white, size: 120),
     );
   }
@@ -63,8 +66,9 @@ class _LoginState extends State<Login> {
   Widget _inputField(String hintText, TextEditingController controller,
       {isPassword = false}) {
     var border = OutlineInputBorder(
-        borderRadius: BorderRadius.circular(18),
-        borderSide: const BorderSide(color: Colors.white));
+      borderRadius: BorderRadius.circular(18),
+      borderSide: const BorderSide(color: Colors.white),
+    );
     return TextField(
       style: const TextStyle(color: Colors.white),
       controller: controller,
@@ -81,8 +85,33 @@ class _LoginState extends State<Login> {
   Widget _loginBtn() {
     return ElevatedButton(
       onPressed: () {
-        debugPrint("Usuario : " + usernameController.text);
-        debugPrint("Contraseña : " + passwordController.text);
+        String username = usernameController.text;
+        String password = passwordController.text;
+        if (username == 'Usuario' && password == '123') {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => Homepage()),
+          );
+        } else {
+          showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return AlertDialog(
+                title: const Text('Error de inicio de sesión'),
+                content:
+                    const Text('El usuario o la contraseña son incorrectos.'),
+                actions: [
+                  TextButton(
+                    child: const Text('Aceptar'),
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                  ),
+                ],
+              );
+            },
+          );
+        }
       },
       child: const SizedBox(
         width: double.infinity,
@@ -102,10 +131,18 @@ class _LoginState extends State<Login> {
   }
 
   Widget _extraText() {
-    return const Text(
-      "¿No tienes una cuenta?",
-      textAlign: TextAlign.center,
-      style: TextStyle(fontSize: 16, color: Colors.white),
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => Register()),
+        );
+      },
+      child: const Text(
+        "¿No tienes una cuenta?, Regístrate",
+        textAlign: TextAlign.center,
+        style: TextStyle(fontSize: 16, color: Colors.white),
+      ),
     );
   }
 }
