@@ -57,7 +57,8 @@ class _LoginState extends State<Login> {
     return Container(
       decoration: BoxDecoration(
         border: Border.all(color: Colors.white, width: 2),
-        shape: BoxShape.circle,
+        shape: BoxShape.rectangle,
+        borderRadius: BorderRadius.circular(10),
       ),
       child: const Icon(Icons.person, color: Colors.white, size: 120),
     );

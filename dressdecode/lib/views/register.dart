@@ -1,5 +1,5 @@
-import "package:dressdecode/views/login.dart";
-import "package:flutter/material.dart";
+import 'package:dressdecode/views/login.dart';
+import 'package:flutter/material.dart';
 
 class Register extends StatefulWidget {
   @override
@@ -63,7 +63,8 @@ class _RegisterState extends State<Register> {
     return Container(
       decoration: BoxDecoration(
         border: Border.all(color: Colors.white, width: 2),
-        shape: BoxShape.circle,
+        shape: BoxShape.rectangle,
+        borderRadius: BorderRadius.circular(10),
       ),
       child: const Icon(Icons.person_add, color: Colors.white, size: 120),
     );
@@ -96,7 +97,28 @@ class _RegisterState extends State<Register> {
         String password = passwordController.text;
         String confirmPassword = confirmPasswordController.text;
 
-        if (password == confirmPassword) {
+        if (username.isEmpty ||
+            email.isEmpty ||
+            password.isEmpty ||
+            confirmPassword.isEmpty) {
+          showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return AlertDialog(
+                title: const Text('Registro fallido'),
+                content: const Text('Faltan rellenar datos.'),
+                actions: [
+                  TextButton(
+                    child: const Text('Aceptar'),
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                  ),
+                ],
+              );
+            },
+          );
+        } else if (password == confirmPassword) {
           setState(() {
             passwordsMatch = true;
           });
@@ -108,13 +130,14 @@ class _RegisterState extends State<Register> {
             context: context,
             builder: (BuildContext context) {
               return AlertDialog(
-                title: const Text("Registro exitoso"),
-                content: const Text("¡Tu cuenta ha sido creada exitosamente!"),
+                title: const Text('Registro exitoso'),
+                content: const Text('¡Te has registrado exitosamente!'),
                 actions: [
                   TextButton(
-                    child: const Text("Aceptar"),
+                    child: const Text('Aceptar'),
                     onPressed: () {
-                      Navigator.of(context).pushReplacement(
+                      Navigator.push(
+                        context,
                         MaterialPageRoute(builder: (context) => Login()),
                       );
                     },
