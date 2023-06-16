@@ -158,10 +158,10 @@ class _LoginState extends State<Login> {
               );
             },
           );
-        } else if (username == "Usuario" && password == "123") {
+        } else if (username == "Rosa" && password == "123") {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => Homepage()),
+            MaterialPageRoute(builder: (context) => MyHomePage()),
           );
         } else {
           showDialog(

@@ -11,6 +11,8 @@ class _RegisterState extends State<Register> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController confirmPasswordController = TextEditingController();
+  TextEditingController phoneController = TextEditingController();
+  TextEditingController addressController = TextEditingController();
 
   bool passwordsMatch = true;
 
@@ -46,6 +48,10 @@ class _RegisterState extends State<Register> {
             _inputField("Nombre de usuario", usernameController),
             const SizedBox(height: 20),
             _inputField("Correo Electrónico", emailController),
+            const SizedBox(height: 20),
+            _inputField("Telefono", phoneController),
+            const SizedBox(height: 20),
+            _inputField("Dirección", addressController),
             const SizedBox(height: 20),
             _inputField("Contraseña", passwordController, isPassword: true),
             const SizedBox(height: 20),
@@ -96,11 +102,15 @@ class _RegisterState extends State<Register> {
         String email = emailController.text;
         String password = passwordController.text;
         String confirmPassword = confirmPasswordController.text;
+        String phone = phoneController.text;
+        String address = addressController.text;
 
         if (username.isEmpty ||
             email.isEmpty ||
             password.isEmpty ||
-            confirmPassword.isEmpty) {
+            confirmPassword.isEmpty ||
+            phone.isEmpty ||
+            address.isEmpty) {
           showDialog(
             context: context,
             builder: (BuildContext context) {

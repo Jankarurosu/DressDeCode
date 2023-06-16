@@ -1,4 +1,5 @@
 import 'package:dressdecode/views/login.dart';
+import 'package:dressdecode/views/userprofile.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,15 +16,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'DressDeCode',
       theme: ThemeData(
-        brightness: Brightness.dark,
-        inputDecorationTheme: InputDecorationTheme(
-          enabledBorder: UnderlineInputBorder(
-            borderSide: BorderSide(
-              color: Colors.white.withOpacity(.2),
-            ),
-          ),
-        ),
+        primarySwatch: Colors.pink,
       ),
+      routes: {
+        '/userprofile': (context) => UserProfile(),
+      },
       home: WelcomeScreen(),
     );
   }
