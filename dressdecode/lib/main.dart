@@ -1,4 +1,5 @@
 import 'package:dressdecode/views/login.dart';
+import 'package:dressdecode/views/products.dart';
 import 'package:dressdecode/views/userprofile.dart';
 import 'package:flutter/material.dart';
 
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         '/userprofile': (context) => UserProfile(),
+        '/products': (context) => Products(),
       },
       home: WelcomeScreen(),
     );

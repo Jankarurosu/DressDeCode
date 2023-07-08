@@ -1,3 +1,4 @@
+import 'package:dressdecode/views/products.dart';
 import 'package:dressdecode/views/userprofile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -121,8 +122,10 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void navigateToProductsPage(BuildContext context) {
-    // Implementa la navegación a la página de productos aquí
-    print('Navigating to Products Page');
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => Products()),
+    );
   }
 
   void navigateToScannerPage(BuildContext context) {
