@@ -1,4 +1,7 @@
-import 'package:dressdecode/models/constants.dart';
+import 'package:dressdecode/models/categoriesModel.dart';
+import 'package:dressdecode/models/constantsModel.dart';
+import 'package:dressdecode/models/itemcard.dart';
+import 'package:dressdecode/models/productsmodel.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -12,35 +15,56 @@ class _ProductsState extends State<Products> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        leading: IconButton(
-          icon: Icon(
-            CupertinoIcons.arrow_left,
-            color: Colors.white,
+        appBar: AppBar(
+          title: Text('Productos'),
+          elevation: 0,
+          leading: IconButton(
+            icon: Icon(
+              CupertinoIcons.arrow_left,
+              color: Colors.white,
+            ),
+            onPressed: () {
+              Navigator.pop(context);
+            },
           ),
-          onPressed: () {
-            Navigator.pop(context);
-          },
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(
+                CupertinoIcons.search,
+                color: Colors.white,
+              ),
+              onPressed: () {},
+            ),
+            IconButton(
+              icon: Icon(
+                CupertinoIcons.cart,
+                color: Colors.white,
+              ),
+              onPressed: () {},
+            ),
+            SizedBox(width: kDefaultPaddin / 2),
+          ],
         ),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(
-              CupertinoIcons.search,
-              color: Colors.white,
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Categories(),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: kDefaultPaddin),
+                child: GridView.builder(
+                    itemCount: products.length,
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      mainAxisSpacing: kDefaultPaddin,
+                      crossAxisSpacing: kDefaultPaddin,
+                      childAspectRatio: 0.75,
+                    ),
+                    itemBuilder: (context, index) =>
+                        ItemCard(key: UniqueKey(), product: products[index])),
+              ),
             ),
-            onPressed: () {},
-          ),
-          IconButton(
-            icon: Icon(
-              CupertinoIcons.cart,
-              color: Colors.white,
-            ),
-            onPressed: () {},
-          ),
-          SizedBox(width: kDefaultPaddin / 2),
-        ],
-      ),
-    );
+          ],
+        ));
   }
 }

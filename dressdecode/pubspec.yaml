@@ -63,6 +63,19 @@ flutter:
   assets:
     - assets/images/background.png
     - assets/images/user.jpeg
+    - assets/images/products/ropa_1.png
+    - assets/images/products/ropa_2.png
+    - assets/images/products/ropa_3.png
+    - assets/images/products/ropa_4.png
+    - assets/images/products/ropa_5.png
+    - assets/images/products/ropa_6.png
+    - assets/images/business/negocio_1.png
+    - assets/images/business/negocio_2.png
+    - assets/images/business/negocio_3.png
+    - assets/images/business/negocio_4.png
+    - assets/images/business/negocio_5.png
+    - assets/images/business/negocio_6.png
+
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
