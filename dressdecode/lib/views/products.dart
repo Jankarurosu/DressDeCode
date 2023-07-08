@@ -1,6 +1,6 @@
 import 'package:dressdecode/models/categoriesModel.dart';
 import 'package:dressdecode/models/constantsModel.dart';
-import 'package:dressdecode/models/itemcard.dart';
+import 'package:dressdecode/models/productsItemCardModel.dart';
 import 'package:dressdecode/models/productsmodel.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

@@ -1,3 +1,4 @@
+import 'package:dressdecode/views/business.dart';
 import 'package:dressdecode/views/products.dart';
 import 'package:dressdecode/views/userprofile.dart';
 import 'package:flutter/cupertino.dart';
@@ -72,27 +73,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     },
                   ),
                   itemDashboard(
-                    'Escaner',
-                    CupertinoIcons.barcode_viewfinder,
-                    Colors.green,
+                    'Negocios',
+                    CupertinoIcons.chart_bar_fill,
+                    Colors.brown,
                     () {
-                      navigateToScannerPage(context);
-                    },
-                  ),
-                  itemDashboard(
-                    'Ajustes',
-                    CupertinoIcons.settings,
-                    Colors.purple,
-                    () {
-                      navigateToSettingsPage(context);
-                    },
-                  ),
-                  itemDashboard(
-                    'Categorias',
-                    CupertinoIcons.archivebox_fill,
-                    Colors.blue,
-                    () {
-                      navigateToCategoryPage(context);
+                      navigateToBusinessPage(context);
                     },
                   ),
                   itemDashboard(
@@ -104,11 +89,27 @@ class _MyHomePageState extends State<MyHomePage> {
                     },
                   ),
                   itemDashboard(
-                    'Negocios',
-                    CupertinoIcons.chart_bar_fill,
-                    Colors.brown,
+                    'Escaner',
+                    CupertinoIcons.barcode_viewfinder,
+                    Colors.green,
                     () {
-                      navigateToBusinessPage(context);
+                      navigateToScannerPage(context);
+                    },
+                  ),
+                  itemDashboard(
+                    'Contáctanos',
+                    CupertinoIcons.phone,
+                    Colors.blue,
+                    () {
+                      navigateToCategoryPage(context);
+                    },
+                  ),
+                  itemDashboard(
+                    'Ajustes',
+                    CupertinoIcons.settings,
+                    Colors.purple,
+                    () {
+                      navigateToSettingsPage(context);
                     },
                   ),
                 ],
@@ -151,8 +152,10 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void navigateToBusinessPage(BuildContext context) {
-    // Implementa la navegación a la página de negocios aquí
-    print('Navigating to Business Page');
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => Business()),
+    );
   }
 
   Widget itemDashboard(String title, IconData iconData, Color background,

@@ -1,12 +1,12 @@
+import 'package:dressdecode/models/businessModel.dart';
 import 'package:dressdecode/models/constantsModel.dart';
-import 'package:dressdecode/models/productsmodel.dart';
 import 'package:flutter/material.dart';
 
 class ItemCard extends StatelessWidget {
-  final Product product;
+  final Business business;
   const ItemCard({
     required Key key,
-    required this.product,
+    required this.business,
   }) : super(key: key);
 
   @override
@@ -18,30 +18,21 @@ class ItemCard extends StatelessWidget {
           Expanded(
             child: Container(
               padding: EdgeInsets.all(kDefaultPaddin),
-              // For  demo we use fixed height  and width
-              // Now we dont need them
-              // height: 180,
-              // width: 160,
               decoration: BoxDecoration(
-                color: product.color,
+                color: business.color,
                 borderRadius: BorderRadius.circular(16),
               ),
               child: Hero(
-                tag: "${product.id}",
-                child: Image.asset(product.image),
+                tag: "${business.id}",
+                child: Image.asset(business.image),
               ),
             ),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: kDefaultPaddin / 4),
-            child: Text(
-              // products is out demo list
-              product.title,
-              style: TextStyle(color: kTextLightColor),
-            ),
           ),
           Text(
-            "\$${product.price}",
+            "${business.title}",
             style: TextStyle(fontWeight: FontWeight.bold),
           )
         ],
