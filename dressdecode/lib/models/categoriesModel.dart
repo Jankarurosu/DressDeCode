@@ -12,6 +12,7 @@ class _CategoriesState extends State<Categories> {
     "Camisas",
     "Pantalones",
     "Faldas",
+    "Promociones"
   ];
 
   int selectedIndex = 0;

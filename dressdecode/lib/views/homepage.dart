@@ -1,5 +1,6 @@
 import 'package:dressdecode/views/business.dart';
 import 'package:dressdecode/views/products.dart';
+import 'package:dressdecode/views/scanner.dart';
 import 'package:dressdecode/views/userprofile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -105,8 +106,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     },
                   ),
                   itemDashboard(
-                    'Ajustes',
-                    CupertinoIcons.settings,
+                    'Historial',
+                    CupertinoIcons.clock,
                     Colors.purple,
                     () {
                       navigateToSettingsPage(context);
@@ -130,8 +131,10 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void navigateToScannerPage(BuildContext context) {
-    // Implementa la navegación a la página del escáner aquí
-    print('Navigating to Scanner Page');
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => Scanner()),
+    );
   }
 
   void navigateToSettingsPage(BuildContext context) {
