@@ -2,6 +2,7 @@ import 'package:dressdecode/models/categoriesModel.dart';
 import 'package:dressdecode/models/constantsModel.dart';
 import 'package:dressdecode/models/productsItemCardModel.dart';
 import 'package:dressdecode/models/productsmodel.dart';
+import 'package:dressdecode/views/shoppingCart.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -40,7 +41,12 @@ class _ProductsState extends State<Products> {
                 CupertinoIcons.cart,
                 color: Colors.white,
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ShoppingCart()),
+                );
+              },
             ),
             SizedBox(width: kDefaultPaddin / 2),
           ],

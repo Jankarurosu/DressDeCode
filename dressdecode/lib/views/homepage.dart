@@ -1,6 +1,7 @@
 import 'package:dressdecode/views/business.dart';
 import 'package:dressdecode/views/products.dart';
 import 'package:dressdecode/views/scanner.dart';
+import 'package:dressdecode/views/shoppingHistory.dart';
 import 'package:dressdecode/views/userprofile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -102,7 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     CupertinoIcons.phone,
                     Colors.blue,
                     () {
-                      navigateToCategoryPage(context);
+                      navigateToContactPage(context);
                     },
                   ),
                   itemDashboard(
@@ -110,7 +111,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     CupertinoIcons.clock,
                     Colors.purple,
                     () {
-                      navigateToSettingsPage(context);
+                      navigateToShoppingHistoryPage(context);
                     },
                   ),
                 ],
@@ -130,21 +131,11 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  void navigateToScannerPage(BuildContext context) {
+  void navigateToBusinessPage(BuildContext context) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => Scanner()),
+      MaterialPageRoute(builder: (context) => Business()),
     );
-  }
-
-  void navigateToSettingsPage(BuildContext context) {
-    // Implementa la navegación a la página de configuraciones aquí
-    print('Navigating to Settings Page');
-  }
-
-  void navigateToCategoryPage(BuildContext context) {
-    // Implementa la navegación a la página de categorías aquí
-    print('Navigating to Category Page');
   }
 
   void navigateToUserPage(BuildContext context) {
@@ -154,10 +145,22 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  void navigateToBusinessPage(BuildContext context) {
+  void navigateToScannerPage(BuildContext context) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => Business()),
+      MaterialPageRoute(builder: (context) => Scanner()),
+    );
+  }
+
+  void navigateToContactPage(BuildContext context) {
+    // Implementa la navegación a la página de configuraciones aquí
+    print('Navigating to Settings Page');
+  }
+
+  void navigateToShoppingHistoryPage(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => ShoppingHistory()),
     );
   }
 
