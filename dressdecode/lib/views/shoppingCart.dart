@@ -40,15 +40,35 @@ class _ShoppingCartState extends State<ShoppingCart> {
           CartItem(
             image: 'assets/images/products/ropa_5.png',
             name: 'Ropa 5',
-            price: '129.99',
+            price: '100.99',
+          ),
+          CartItem(
+            image: 'assets/images/products/ropa_6.png',
+            name: 'Ropa 6',
+            price: '122.99',
           ),
           SizedBox(height: 16.0),
-          ElevatedButton(
-            onPressed: () {
-              // Lógica para realizar la compra
-            },
-            child: Text('Realizar compra'),
-          ),
+          Container(
+            width: double.infinity,
+            height: 60,
+            margin: EdgeInsets.symmetric(horizontal: 50),
+            child: ElevatedButton(
+              onPressed: () {
+                // Lógica para realizar la compra
+              },
+              style: ElevatedButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30),
+                ),
+              ),
+              child: Text(
+                'Realizar compra',
+                style: TextStyle(
+                  fontSize: 20,
+                ),
+              ),
+            ),
+          )
         ],
       ),
     );
