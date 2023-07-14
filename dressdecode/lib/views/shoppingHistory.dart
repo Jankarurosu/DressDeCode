@@ -11,7 +11,7 @@ class _ShoppingHistoryState extends State<ShoppingHistory> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Historial de pagos'),
+        title: Text('Historial de compras'),
       ),
       body: ListView(
         children: [
