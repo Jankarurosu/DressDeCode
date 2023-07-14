@@ -1,3 +1,4 @@
+import 'package:dressdecode/views/Contact.dart';
 import 'package:dressdecode/views/business.dart';
 import 'package:dressdecode/views/products.dart';
 import 'package:dressdecode/views/scanner.dart';
@@ -153,8 +154,10 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void navigateToContactPage(BuildContext context) {
-    // Implementa la navegación a la página de configuraciones aquí
-    print('Navigating to Settings Page');
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => Contact()),
+    );
   }
 
   void navigateToShoppingHistoryPage(BuildContext context) {
