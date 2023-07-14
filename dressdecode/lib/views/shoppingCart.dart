@@ -147,17 +147,17 @@ class CartItem extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
                   IconButton(
-                    icon: Icon(Icons.remove),
+                    icon: Icon(Icons.remove, color: Colors.white),
                     onPressed: () {
                       // Lógica para reducir la cantidad
                     },
                   ),
                   Text(
                     '1', // Reemplazar por la cantidad actual
-                    style: TextStyle(fontSize: 14.0),
+                    style: TextStyle(fontSize: 14.0, color: Colors.white),
                   ),
                   IconButton(
-                    icon: Icon(Icons.add),
+                    icon: Icon(Icons.add, color: Colors.white),
                     onPressed: () {
                       // Lógica para aumentar la cantidad
                     },
