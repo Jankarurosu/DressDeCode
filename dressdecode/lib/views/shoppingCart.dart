@@ -1,3 +1,4 @@
+import 'package:dressdecode/views/payment.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -54,7 +55,10 @@ class _ShoppingCartState extends State<ShoppingCart> {
             margin: EdgeInsets.symmetric(horizontal: 50),
             child: ElevatedButton(
               onPressed: () {
-                // Lógica para realizar la compra
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Payment()),
+                );
               },
               style: ElevatedButton.styleFrom(
                 shape: RoundedRectangleBorder(
