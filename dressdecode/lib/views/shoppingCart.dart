@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class ShoppingCart extends StatefulWidget {
   const ShoppingCart({Key? key}) : super(key: key);
@@ -27,8 +28,18 @@ class _ShoppingCartState extends State<ShoppingCart> {
             price: '149.99',
           ),
           CartItem(
-            image: 'assets/images/products/ropa_1.png',
+            image: 'assets/images/products/ropa_3.png',
             name: 'Ropa 3',
+            price: '129.99',
+          ),
+          CartItem(
+            image: 'assets/images/products/ropa_4.png',
+            name: 'Ropa 4',
+            price: '129.99',
+          ),
+          CartItem(
+            image: 'assets/images/products/ropa_5.png',
+            name: 'Ropa 5',
             price: '129.99',
           ),
           SizedBox(height: 16.0),
@@ -101,25 +112,35 @@ class CartItem extends StatelessWidget {
               ],
             ),
           ),
-          Row(
-            children: <Widget>[
-              IconButton(
-                icon: Icon(Icons.remove),
-                onPressed: () {
-                  // Lógica para reducir la cantidad
-                },
+          Padding(
+            padding: EdgeInsets.only(right: 16.0),
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.pink,
+                borderRadius: BorderRadius.circular(8.0),
               ),
-              Text(
-                '1', // Reemplazar por la cantidad actual
-                style: TextStyle(fontSize: 14.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  IconButton(
+                    icon: Icon(Icons.remove),
+                    onPressed: () {
+                      // Lógica para reducir la cantidad
+                    },
+                  ),
+                  Text(
+                    '1', // Reemplazar por la cantidad actual
+                    style: TextStyle(fontSize: 14.0),
+                  ),
+                  IconButton(
+                    icon: Icon(Icons.add),
+                    onPressed: () {
+                      // Lógica para aumentar la cantidad
+                    },
+                  ),
+                ],
               ),
-              IconButton(
-                icon: Icon(Icons.add),
-                onPressed: () {
-                  // Lógica para aumentar la cantidad
-                },
-              ),
-            ],
+            ),
           ),
         ],
       ),
