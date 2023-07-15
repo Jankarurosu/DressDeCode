@@ -13,6 +13,8 @@ class Products extends StatefulWidget {
 }
 
 class _ProductsState extends State<Products> {
+  TextEditingController searchController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +36,36 @@ class _ProductsState extends State<Products> {
                 CupertinoIcons.search,
                 color: Colors.white,
               ),
-              onPressed: () {},
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return AlertDialog(
+                      title: Text('Buscar productos'),
+                      content: TextField(
+                        controller: searchController,
+                        decoration: InputDecoration(
+                          hintText: 'Ingrese su consulta de búsqueda',
+                        ),
+                      ),
+                      actions: <Widget>[
+                        TextButton(
+                          child: Text('Cancelar'),
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                        ),
+                        TextButton(
+                          child: Text('Buscar'),
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                        ),
+                      ],
+                    );
+                  },
+                );
+              },
             ),
             IconButton(
               icon: Icon(
