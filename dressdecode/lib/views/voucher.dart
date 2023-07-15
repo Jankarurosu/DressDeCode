@@ -56,7 +56,7 @@ class _VoucherState extends State<Voucher> {
           ),
           ListTile(
             title: Text('Método de pago', textAlign: TextAlign.center),
-            subtitle: Text('S/.300', textAlign: TextAlign.center),
+            subtitle: Text("Tarjeta de crédito", textAlign: TextAlign.center),
           ),
           ListTile(
             title: Text('Nombre del cliente', textAlign: TextAlign.center),
